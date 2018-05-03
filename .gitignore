@@ -1,0 +1,5 @@
+/.cache
+/.emacs.d
+/.gnupg
+/.local
+.zcompdump
