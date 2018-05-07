@@ -310,9 +310,15 @@ values."
    ))
 
 (defun dotspacemacs/user-init ()
-  (setq org-directory "c:/Users/aurgh/Dropbox/OrgFiles")
-  (setq org-agenda-files (list "c:/Users/aurgh/Dropbox/.org/"))
-  (setq org-journal-dir "c:/Users/aurgh/Dropbox/OrgFiles/journal/")
+
+  (when (string-equal system-type "windows-nt")
+    (setq org-directory "c:/Users/aurgh/Dropbox/OrgFiles")
+    (setq org-agenda-files (list "c:/Users/aurgh/Dropbox/.org/"))
+    (setq org-journal-dir "c:/Users/aurgh/Dropbox/OrgFiles/journal/"))
+  (when (string-equal system-type "gnu/linux")
+    (setq org-directory "~/Dropbox/OrgFiles")
+    (setq org-agenda-files (list "~/Dropbox/.org/"))
+    (setq org-journal-dir "~/Dropbox/OrgFiles/journal/"))
 )
 
 (defun dotspacemacs/user-config()
